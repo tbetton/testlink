@@ -5,9 +5,9 @@ MAINTAINER tbetton777
 RUN apt-get update -yqq && \
     apt-get install -yqq apache2 php7.3 wget php7.3-mysql php7.3-curl
 
-RUN wget -q -O - https://github.com/TestLinkOpenSourceTRMS/testlink-code/archive/1.9.19.tar.gz | tar zxf - && \
-    mv testlink-1.9.19 /var/www/html/testlink && \
-    rm testlink-1.9.19.tar.gz
+RUN wget -q -O - https://github.com/TestLinkOpenSourceTRMS/testlink-code/archive/1.9.19.tar.gz | tar zxvf - && \
+    mv testlink-code-1.9.19 /var/www/html/testlink #&& \
+    # rm testlink-code-1.9.19.tar.gz
 
 RUN echo "max_execution_time=3000" >> /etc/php5/apache2/php.ini && \
     echo "session.gc_maxlifetime=60000" >> /etc/php5/apache2/php.ini
