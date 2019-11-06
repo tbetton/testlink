@@ -21,13 +21,13 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
+VOLUME /var/testlink
+
 RUN mkdir -p /var/testlink/logs /var/testlink/upload_area
 
 RUN chmod 777 -R /var/www/html/testlink && \
     chmod 777 -R /var/testlink/logs && \
     chmod 777 -R /var/testlink/upload_area
-
-VOLUME /var/testlink
 
 EXPOSE 80/tcp
 
